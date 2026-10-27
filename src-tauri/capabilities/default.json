@@ -1,0 +1,12 @@
+{
+  "identifier": "main-window",
+  "description": "Local AirVault window and user-selected native dialogs only.",
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    "core:default",
+    "dialog:allow-open",
+    "dialog:allow-save"
+  ]
+}

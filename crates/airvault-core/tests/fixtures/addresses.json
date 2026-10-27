@@ -1,0 +1,14 @@
+{
+  "ethereum": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94",
+  "litecoin": "LUWPbpM43E2p7ZSh8cyTBEkvpHmr3cB8Ez",
+  "dogecoin": "DBus3bamQjgJULBJtYXpEzDWQRwF5iwxgC",
+  "bitcoin_cash": "bitcoincash:qqyx49mu0kkn9ftfj6hje6g2wfer34yfnq5tahq3q6",
+  "cosmos": "cosmos19rl4cm2hmr8afy4kldpxz3fka4jguq0auqdal4",
+  "xrp": "rHsMGQEkVNJmpGWs8XUBoTBiAAbwxZN5v3",
+  "tron": "TUEZSdKsoDHQMeZwihtdoBiN46zxhGWYdH",
+  "solana": "HAgk14JpMQLgt6rVgv7cBQFJWFto5Dqxi472uT3DKpqk",
+  "polkadot": "13KVd4f2a4S5pLp4gTTFezyXdPWx27vQ9vS6xBXJ9yWVd7xo",
+  "polkadot//1": "12ES7PTE9a3DKbs9mCsRA6Wge2DS1XK1xFgbTkp47nPV53yG",
+  "cardano": "addr1qy8ac7qqy0vtulyl7wntmsxc6wex80gvcyjy33qffrhm7sh927ysx5sftuw0dlft05dz3c7revpf7jx0xnlcjz3g69mq4afdhv",
+  "cardano_preprod": "addr_test1qq8ac7qqy0vtulyl7wntmsxc6wex80gvcyjy33qffrhm7sh927ysx5sftuw0dlft05dz3c7revpf7jx0xnlcjz3g69mqkt5dmn"
+}

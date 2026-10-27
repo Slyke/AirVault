@@ -1,0 +1,60 @@
+[package]
+name = "airvault-core"
+version = "0.1.0"
+edition = "2021"
+[features]
+default = ["network"]
+network = ["dep:ureq", "dep:url", "dep:tungstenite"]
+[dependencies]
+aes-gcm = "0.10.3"
+argon2 = "0.5.3"
+base64 = "0.22"
+bip39 = { version = "2.2", features = ["zeroize"] }
+bitcoin = { version = "0.32", features = ["serde", "base64"] }
+hex = "0.4"
+rand = "0.8"
+serde.workspace = true
+serde_json.workspace = true
+sha2 = "0.10"
+subtle = "2.6"
+thiserror = "2"
+uuid.workspace = true
+zeroize.workspace = true
+tempfile = "3"
+ureq = { version = "2.12", features = ["json"], optional = true }
+tw_bitcoin = { git = "https://github.com/trustwallet/wallet-core", rev = "d40d24a63d92619167903369308bf0e2f7eb3a59" }
+tw_coin_entry = { git = "https://github.com/trustwallet/wallet-core", rev = "d40d24a63d92619167903369308bf0e2f7eb3a59" }
+tw_keypair = { git = "https://github.com/trustwallet/wallet-core", rev = "d40d24a63d92619167903369308bf0e2f7eb3a59" }
+tw_hash = { git = "https://github.com/trustwallet/wallet-core", rev = "d40d24a63d92619167903369308bf0e2f7eb3a59" }
+tw_proto = { git = "https://github.com/trustwallet/wallet-core", rev = "d40d24a63d92619167903369308bf0e2f7eb3a59" }
+url = { version = "2", optional = true }
+
+tw_ethereum = { git = "https://github.com/trustwallet/wallet-core", rev = "d40d24a63d92619167903369308bf0e2f7eb3a59" }
+tw_solana = { git = "https://github.com/trustwallet/wallet-core", rev = "d40d24a63d92619167903369308bf0e2f7eb3a59" }
+tw_cosmos = { git = "https://github.com/trustwallet/wallet-core", rev = "d40d24a63d92619167903369308bf0e2f7eb3a59" }
+tw_ripple = { git = "https://github.com/trustwallet/wallet-core", rev = "d40d24a63d92619167903369308bf0e2f7eb3a59" }
+tw_bitcoincash = { git = "https://github.com/trustwallet/wallet-core", rev = "d40d24a63d92619167903369308bf0e2f7eb3a59" }
+tw_encoding = { git = "https://github.com/trustwallet/wallet-core", rev = "d40d24a63d92619167903369308bf0e2f7eb3a59" }
+sha3 = "0.10"
+hmac = "0.12"
+bs58 = { version = "0.5", features = ["check"] }
+bech32 = "0.11"
+blake2 = "0.10"
+ed25519-dalek = { version = "2.2", features = ["zeroize"] }
+schnorrkel = "0.11"
+substrate-bip39 = "0.6"
+cardano-serialization-lib = "15"
+prost = "0.14"
+rlp = "0.6"
+
+curve25519-dalek = "4"
+parity-scale-codec = { version = "3.7", features = ["derive"] }
+scale-info = "2.11"
+frame-metadata = "23"
+merkleized-metadata = "0.5.1"
+tw_misc = { git = "https://github.com/trustwallet/wallet-core", rev = "d40d24a63d92619167903369308bf0e2f7eb3a59" }
+secp256k1 = { version = "0.29", features = ["recovery"] }
+
+tungstenite = { version = "0.28", optional = true, features = ["rustls-tls-webpki-roots"] }
+scale-value = "0.18"
+twox-hash = "2"

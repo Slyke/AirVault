@@ -1,0 +1,14 @@
+title = "AirVault secret scanning"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "generic-api-key"
+
+[[rules.allowlists]]
+description = "The crypto_box dependency lists curve25519-dalek; this is a public Cargo package name."
+condition = "AND"
+regexTarget = "secret"
+paths = ['''(^|/)Cargo\.lock$''']
+regexes = ['''^curve25519-dalek$''']

@@ -1,0 +1,12 @@
+import { writeFile } from 'node:fs/promises';
+const socket = new WebSocket('wss://polkadot-asset-hub-rpc.polkadot.io');
+const pending = new Map();
+let nextId = 0;
+const deadline = setTimeout(() => { process.stderr.write('RPC timeout\n'); process.exit(1); }, 25000);
+socket.addEventListener('message', (event) => { const data = JSON.parse(event.data); if (pending.has(data.id)) { const { resolve, reject } = pending.get(data.id); pending.delete(data.id); data.error ? reject(new Error(JSON.stringify(data.error))) : resolve(data.result); } });
+const rpc = (method, params) => new Promise((resolve, reject) => { const id = ++nextId; pending.set(id, { resolve, reject }); socket.send(JSON.stringify({ jsonrpc: '2.0', id, method, params })); });
+await new Promise((resolve, reject) => { socket.addEventListener('open', resolve, { once: true }); socket.addEventListener('error', reject, { once: true }); });
+const result = { genesis: await rpc('chain_getBlockHash', [0]), version: await rpc('state_getRuntimeVersion', []), properties: await rpc('system_properties', []), metadata: await rpc('state_call', ['Metadata_metadata_at_version', '0x0f000000']) };
+await writeFile('.local/polkadot-context.json', JSON.stringify(result));
+console.log({ ...result, metadata: result.metadata.length / 2 + ' bytes' });
+socket.close(); clearTimeout(deadline);
